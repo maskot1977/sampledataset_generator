@@ -60,7 +60,7 @@ class SampleDatasetGenerator:
             self.coef = np.append(self.coef, 0)
 
     def categoricalize(self, column=-1, labels=[0, 1], classification_ratio=0.5):
-        if column >= 0 and column < dataset.X.shape[1]:
+        if column >= 0 and column < self.X.shape[1]:
             matrix = pd.DataFrame(self.X)
             matrix[column] = categoricalize(
                 self.X[:, column],
