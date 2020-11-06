@@ -57,7 +57,7 @@ class SampleDatasetGenerator:
             x = np.random.randn(self.n_samples) * self.independence
             x += self.X[:, n % self.n_informative] * (1 - self.independence)
             self.X = np.concatenate([self.X, x.reshape(self.n_samples, 1)], axis=1)
-            self.coef = np.append(dataset.coef, 0)
+            self.coef = np.append(self.coef, 0)
 
     def categoricalize(self, column=-1, labels=[0, 1], classification_ratio=0.5):
         if column >= 0 and column < dataset.X.shape[1]:
