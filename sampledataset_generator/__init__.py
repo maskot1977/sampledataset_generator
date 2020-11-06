@@ -1,1 +1,1 @@
-from sampledataset_generator import *
+from sampledataset_generator.generator import *
