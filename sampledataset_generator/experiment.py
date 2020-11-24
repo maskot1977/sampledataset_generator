@@ -44,4 +44,4 @@ def benchmark(model_name, model):
                     df.groupby("n_features").mean().plot(ax=ax, kind='bar', grid=True, yerr=df_err)
                     ax.set_xlabel('')
                     ax.set_ylabel('R2')
-                    ax.set_title("{} independence={} noise={}".format(function, independence, noise))
+                    ax.set_title("{} independence={} noise={}".format(fname, independence, noise))
