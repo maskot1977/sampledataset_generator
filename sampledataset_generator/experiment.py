@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sampledataset_generator import generator
 import pandas as pd
 
-def experiment(model_name, model):
+def benchmark(model_name, model):
     for fname, function in [
                             ["linear", generator.linear], 
                             ["freadman1", generator.friedman1]
