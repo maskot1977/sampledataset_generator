@@ -51,13 +51,18 @@ class SampleDatasetGenerator:
         self.coef = np.random.randn(self.n_informative) * 10
         coef = self.coef
 
-        self.Y = self.function(X, coef) + self.noise * np.random.randn(self.n_samples)
-
         for n in range(self.n_features - self.n_informative):
             x = np.random.randn(self.n_samples) * self.independence
             x += self.X[:, n % self.n_informative] * (1 - self.independence)
             self.X = np.concatenate([self.X, x.reshape(self.n_samples, 1)], axis=1)
             self.coef = np.append(self.coef, 0)
+            
+        self.generateY()
+        
+            
+    def generateY(self):
+        self.Y = self.function(X, coef) + self.noise * np.random.randn(self.n_samples)
+
 
     def categoricalize(self, column=-1, labels=[0, 1], classification_ratio=0.5):
         if column >= 0 and column < self.X.shape[1]:
