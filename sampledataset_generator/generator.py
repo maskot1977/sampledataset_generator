@@ -61,7 +61,7 @@ class SampleDatasetGenerator:
         
             
     def generateY(self):
-        self.Y = self.function(X, coef) + self.noise * np.random.randn(self.n_samples)
+        self.Y = self.function(X[:, :self.n_informative], coef) + self.noise * np.random.randn(self.n_samples)
 
 
     def categoricalize(self, column=-1, labels=[0, 1], classification_ratio=0.5):
