@@ -93,6 +93,9 @@ class SampleDatasetGenerator:
 
 
 def categoricalize(dat, labels=[1, 0], classification_ratio=0.5):
+    if len(set(dat)) < len(dat) / 10:
+        return dat
+    
     tmp_code = 0
     tmp_dat = dat
 
