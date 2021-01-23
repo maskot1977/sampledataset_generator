@@ -48,7 +48,8 @@ class SampleDatasetGenerator:
         ) * np.random.randn(self.n_informative)
         X = self.X
 
-        self.coef = np.sort(np.random.randn(self.n_informative))[::-1] * 10
+        #self.coef = np.sort(np.random.randn(self.n_informative))[::-1] * 10
+        self.coef = np.sort(np.random.randint(10, 1000, self.n_informative) / 100 * [(-1) ** i for i in range(self.n_informative)])[::-1]
         coef = self.coef
 
         for n in range(self.n_features - self.n_informative):
