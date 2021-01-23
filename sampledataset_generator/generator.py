@@ -92,7 +92,7 @@ class SampleDatasetGenerator:
         self.fill_randomly(0, rate=rate)
 
 
-def categoricalize(dat, labels=[0, 1], classification_ratio=0.5):
+def categoricalize(dat, labels=[1, 0], classification_ratio=0.5):
     tmp_code = 0
     tmp_dat = dat
 
