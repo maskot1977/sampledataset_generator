@@ -29,6 +29,8 @@ class SampleDatasetGenerator:
         noise=0.0,
         function=linear,
         independence=1.0,
+        mean=0.0,
+        std=1.0,
     ):
         self.n_samples = n_samples
         self.n_features = n_features
@@ -39,10 +41,12 @@ class SampleDatasetGenerator:
         self.X = False
         self.Y = False
         self.coef = False
+        self.mean = mean
+        self.std = std
 
     def generate(self):
         self.X = (
-            np.random.randn(self.n_samples, self.n_informative)
+            np.random.normal(self.mean, self.std, (self.n_samples, self.n_informative))
             - np.random.rand(self.n_samples, self.n_informative)
             + 0.3
         ) * np.random.randn(self.n_informative)
