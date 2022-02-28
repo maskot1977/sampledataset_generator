@@ -57,7 +57,7 @@ class SampleDatasetGenerator:
         coef = self.coef
 
         for n in range(self.n_features - self.n_informative):
-            x = np.random.randn(self.n_samples) * self.independence
+            x = np.random.normal(self.mean, self.std, (self.n_samples, 1)) * self.independence
             x += self.X[:, n % self.n_informative] * (1 - self.independence)
             self.X = np.concatenate([self.X, x.reshape(self.n_samples, 1)], axis=1)
             self.coef = np.append(self.coef, 0)
