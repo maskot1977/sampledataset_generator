@@ -47,8 +47,8 @@ class SampleDatasetGenerator:
     def generate(self):
         self.X = (
             np.random.normal(self.mean, self.std, (self.n_samples, self.n_informative))
-            - np.random.rand(self.n_samples, self.n_informative)
-            + 0.3
+            # - np.random.rand(self.n_samples, self.n_informative)
+            # + 0.3
         ) * np.random.randn(self.n_informative)
         X = self.X
 
